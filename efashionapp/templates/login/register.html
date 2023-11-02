@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'loginstatic/logstyle.css' %}"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div class="login-container">
+        <h1>Register</h1>
+        <br><br>
+        <form class="login-form" method="post" action="{% url 'registerview1' %}" >
+            {% csrf_token %}
+            <!-- <label for="username">Username</label> -->
+            <input type="text" id="username" name="username" placeholder="USERNAME" required>
+            <br>
+
+            <input type="text" id="phone" name="phone" placeholder="PHONE NUMBER" required>
+            <br>
+
+            <input type="email" id="emailid" name="emailid" placeholder="E-MAIL" required>
+            <br>
+
+            <!-- <label for="password">Password</label> -->
+            <input type="password" id="password" name="password" placeholder="PASSWORD" required>
+            <br>
+
+            <!-- <input type="password" id="password" name="password2" placeholder="RETYPE-PASSWORD" required>
+            <br> -->
+
+            <button type="submit">Register</button>
+        </form>
+        <br><br>
+        <div>
+            {{msg1}}
+        </div>
+       <p class="create-account-link">Already have an account? <a href="{% url 'login1' %}">Login</a></p></div>
+    </div>
+    </div>
+</body>
+</html>
